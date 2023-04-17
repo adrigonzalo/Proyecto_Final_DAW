@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Tetris!</title>
+  <script src="js/juego_tetris.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="css/styles_tetris.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="menu-wrap">
+    <input type="checkbox" class="toggler">
+    <div class="hamburger">
+      <div></div>
+    </div>
+    <div class="menu">
+      <div class="menu-content">
+        <h2 class="t-ucase">Reglas</h2>
+        <p class="rules"> Usa la flecha <b class="key">ARRIBA</b> para rotar la pieza y <b class="key">DERECHA</b>
+          e <b class="key">IZQUIERDA</b> para <br> arrastrarlas hacia los lados. Pulsa <b class="key">ABAJO</b> para que
+          la pieza baje más rápido.</p>
+        <button class="close fw-400">¡Jugar!</button>
+      </div>
+    </div>
+  </div>
+  <header>
+    <h1 class="fw-300 t-ucase">Bienvenido <br><span class="fw-400 t-wide t-big t-ucase">a tetris</span></h1>
+  </header>
+  <main class="game-area">
+    <div class="game">
+      <div class="grid"></div>
+    </div>
+    <section>
+      <div class="display">
+        <h1 class="score fw-400 t-ucase">Puntuación <br> <span class="score-display t-ucase fw-300">0</span></h1>
+        <div class="previous-shape">
+          <div class="previous-grid"></div>
+        </div>
+        <h2 class="lines-display fw-400 t-ucase">Líneas:<span class="lines-score">0</span></h2>
+      </div>
+      <button class="button t-ucase" href="#">Start / Pausa</button>
+      <small class='footer t-ucase'>Table Top Games</small>
+    </section>
+  </main>
+</body>
+
+</html>

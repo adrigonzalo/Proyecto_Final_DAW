@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUDOKU</title>
+    <link rel="stylesheet" href="css/styles_sudoku.css">
+    <link rel="shortcut icon" href="img_sudoku/icono.png">
+</head>
+<body>
+
+    <h1>SUDOKU</h1>
+
+    <div id="tablero">
+        <div id="fila1">
+           <div id="caja1" class="caja"></div>
+           <div id="caja2" class="caja"></div>
+           <div id="caja3" class="caja"></div> 
+        </div>
+        <div id="fila2">
+            <div id="caja4" class="caja"></div>
+            <div id="caja5" class="caja"></div>
+            <div id="caja6" class="caja"></div>
+        </div>
+        <div id="fila3">
+            <div id="caja7" class="caja"></div>
+            <div id="caja8" class="caja"></div>
+            <div id="caja9" class="caja"></div>   
+        </div>
+    </div>
+
+    <button type="button" id="Empezar" onclick="Empezar()">Empezar</button>
+    <button type="button" id="nuevoJuego" onclick="juegoNuevo()">Nuevo Juego</button>
+   
+
+    <div id="diff-juego">
+        <h3>Selecciona dificultad</h3>
+        <label><input type="radio" id="facil" class="label" name="diff_nivel" checked> Facil</label>
+        <label><input type="radio" id="medio" class="label" name="diff_nivel" > Medio</label>
+        <label><input type="radio" id="dificil" class="label" name="diff_nivel"> Dificil</label>
+        <h3>Tiempo Limite :</h3>
+        <label><input type="radio" id="time1" class="label" name="time"><span id="time1_min">03</span>:<span id="time1_sec">00</span></label>
+        <label><input type="radio" id="time2" class="label" name="time" checked><span id="time2_min">05</span>:<span id="time2_sec">00</span></label>
+        <label><input type="radio" id="time3" class="label" name="time"> <span id="time3_min">10</span>:<span id="time3_sec">00</span></label>
+        
+
+
+    </div>
+
+    <div id="vidas">Tienes solo <span id="rem_vidas">3</span> VIDAS</div>
+
+    <div id="tiempo">Tiempo Restante: <span id="time_min">00</span>:<span id="time_sec">00</span></div>
+
+    <script src="js/index_sudoku.js"></script>
+    
+</body>
+</html>

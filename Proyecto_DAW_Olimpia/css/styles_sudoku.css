@@ -1,0 +1,134 @@
+body {
+    background-color: white;
+    color: black
+}
+
+h1 {
+    font-family: 'Potta One', cursive;
+    margin-top: 0%;
+    text-align: center;
+    font-size: 70pt;
+    color: aqua;
+
+}
+
+.caja {
+    height: 156px;
+    width: 156px;
+    border: solid white 2px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+#tablero {
+    height: 480px;
+    width: 480px;
+    border: solid black 4px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 30%;
+    margin-top: -1%;
+}
+
+.celda {
+    height: 50px;
+    width: 50px;
+    border: solid white 1px;
+    text-align: center;
+    background-color: white;
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+input {
+    height: 45px;
+    width: 44px;
+    border: none;
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+    background-color: #333333;
+    color: wheat;
+}
+
+button {
+    height: 100px;
+    width: 200px;
+    font-size: x-large;
+    font-weight: bold;
+    background-color: aquamarine;
+    border: solid 7px black;
+    border-radius: 30px;
+    color: black;
+    position: absolute;
+    cursor: pointer;
+    transition: .5s;
+    transform: translate(100%, 100%);
+    transition: .5s;
+}
+
+#Empezar {
+    top: 26%;
+    left: 5%;
+    transform: translate(100%, 100%);
+    transition: .5s;
+}
+
+#nuevoJuego {
+    top: 45%;
+    left: 5%;
+    transform: translate(100%, 100%);
+    transition: .5s;
+}
+
+
+#diff-juego {
+    position: absolute;
+    top: 24%;
+    left: 75%;
+
+}
+
+h3 {
+    font-family: 'Potta One', cursive;
+    text-align: center;
+    display: flex;
+}
+
+.label {
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}
+
+#vidas {
+    position: absolute;
+    bottom: 20%;
+    left: 35%;
+    text-align: center;
+    color: rgb(255, 0, 17);
+    font-weight: bold;
+    font-size: x-large;
+    font-family: 'Potta One', cursive;
+    font-size: 35pt;
+
+
+}
+
+
+
+
+
+#tiempo {
+    position: absolute;
+    bottom: 10%;
+    left: 35%;
+    font-size: x-large;
+    color: black;
+    font-weight: bold;
+    font-size: 35pt;
+    border: solid 7px black;
+    border-radius: 30px;
+}

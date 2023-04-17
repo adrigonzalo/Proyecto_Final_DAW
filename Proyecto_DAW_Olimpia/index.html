@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROYECTO FINAL</title>
+
+    <!--LINK A BOOTSTRAP-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <!--LINK A HOJA DE ESTILOS-->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!--LINK A JAVASCRIPT-->
+    <link rel="stylesheet" href="js/scripts.js">
+</head>
+<body>
+    <!--CONTENEDOR DE LOS JUEGOS-->
+    <div class="menu">
+        <!--HEADER-->
+        <header>
+            <img src="img/logo-final.png" alt="logo">
+            <h1 id="titulo" data-text="TABLE TOP GAMES">TABLE TOP GAMES</h1>
+        </header>
+        <!--TABLERO DE JUEGOS-->
+        <div class="tablero">
+            <!--PRIMER JUEGO-->
+            <div class="card" id="juego1">
+                <img src="img/juego1.png" class="card-img-top" alt="juego1">
+                <div class="card-body">
+                  <h5 class="card-title">PRIMER JUEGO</h5>
+                  <a href="index_sudoku.html" class="btn btn-primary">JUGAR</a>
+                </div>
+              </div>
+
+            <!--SEGUNDO JUEGO-->
+            <div class="card" id="juego2">
+                <img src="img/juego2.png" class="card-img-top" alt="juego2">
+                <div class="card-body">
+                  <h5 class="card-title">SEGUNDO JUEGO</h5>
+                  <a href="index_mazmorras.html" class="btn btn-primary">JUGAR</a>
+                </div>
+            </div>
+
+            <!--TERCER JUEGO-->
+            <div class="card" id="juego3">
+                <img src="img/juego3.png" class="card-img-top" alt="juego3">
+                <div class="card-body">
+                  <h5 class="card-title">TERCER JUEGO</h5>
+                  <a href="index_memoria.html" class="btn btn-primary">JUGAR</a>
+                </div>
+            </div>
+
+            <!--CUARTO JUEGO-->
+            <div class="card" id="juego4">
+                <img src="img/juego4.png" class="card-img-top" alt="juego4">
+                <div class="card-body">
+                  <h5 class="card-title">CUARTO JUEGO</h5>
+                  <a href="#" class="btn btn-primary">JUGAR</a>
+                </div>
+            </div>
+
+              <!--QUINTO JUEGO-->
+            <div class="card" id="juego5">
+                <img src="img/juego5.png" class="card-img-top" alt="juego5">
+                <div class="card-body">
+                  <h5 class="card-title">QUINTO JUEGO</h5>
+                  <a href="index_ahorcado.html" class="btn btn-primary">JUGAR</a>
+                </div>
+            </div>
+        </div><!--FIN TABLERO JUEGOS-->
+    </div><!--FIN CONTENEDOR JUEGOS-->
+
+    <!--MENU HORIZONTAL-->
+    <ul class="nav">
+
+        <!--PRIMER JUEGO-->
+        <li class="nav-item">
+
+            <!--MODAL PARA EL PRIMER JUEGO-->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">NORMAS Y OBJETIVOS PARA EL PRIMER JUEGO</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Hola buenos dias
+                        <!--NORMAS Y OBJETIVOS PRIMER JUEGO-->
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ENTENDIDO</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        
+            <!-- BOTON DE ACCION DEL MODAL DEL PRIMER JUEGO-->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                PRIMER JUEGO
+            </button>
+        </li><!--FIN PRIMER JUEGO-->
+        
+        <!--SEGUNDO JUEGO-->
+        <li class="nav-item">
+    
+            <!--MODAL PARA EL SEGUNDO JUEGO-->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">NORMAS Y OBJETIVOS PARA EL SEGUNDO JUEGO</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Hola buenos dias
+                        <!--NORMAS Y OBJETIVOS SEGUNDO JUEGO-->
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ENTENDIDO</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        
+            <!-- BOTON DE ACCION DEL MODAL DEL SEGUNDO JUEGO-->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                SEGUNDO JUEGO
+            </button>
+        </li><!--FIN SEGUNDO JUEGO-->
+        
+        <!--TERCER JUEGO-->
+        <li class="nav-item">
+            
+            <!--MODAL PARA EL TERCER JUEGO-->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">NORMAS Y OBJETIVOS PARA EL TERCER JUEGO</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Hola buenos dias
+                        <!--NORMAS Y OBJETIVOS TERCER JUEGO-->
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ENTENDIDO</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        
+            <!-- BOTON DE ACCION DEL MODAL DEL TERCER JUEGO-->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                TERCER JUEGO
+            </button>
+        </li><!-- FIN TERCER JUEGO-->
+
+        <!--CUARTO JUEGO-->
+        <li class="nav-item">
+
+            <!--MODAL PARA EL CUARTO JUEGO-->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">NORMAS Y OBJETIVOS PARA EL CUARTO JUEGO</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Hola buenos dias
+                        <!--NORMAS Y OBJETIVOS CUARTO JUEGO-->
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ENTENDIDO</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        
+            <!-- BOTON DE ACCION DEL MODAL DEL CUARTO JUEGO-->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                CUARTO JUEGO
+            </button>
+        </li><!-- FIN CUARTO JUEGO-->
+        
+        <!-- QUINTO JUEGO-->
+        <li class="nav-item">
+    
+            <!--MODAL PARA EL QUINTO JUEGO-->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">NORMAS Y OBJETIVOS PARA EL QUINTO JUEGO</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Hola buenos dias
+                        <!--NORMAS Y OBJETIVOS QUINTO JUEGO-->
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ENTENDIDO</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        
+            <!-- BOTON DE ACCION DEL MODAL DEL SEXTO JUEGO-->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                QUINTO JUEGO
+            </button>
+        </li><!-- FIN QUINTO JUEGO-->
+    </ul><!-- FIN MENU HORIZONTAL-->
+
+    <!-- VALORACIONES Y FORMULARIO -->
+    <div class="formulario">
+        <h2 id="titulo-form">VALORACIONES Y OPINIONES</h2>
+
+        <!-- FORMULARIO -->
+        <form>
+            <div class="mb-3">
+              <label for="nombre" class="form-label">NOMBRE</label>
+              <input type="text" class="form-control" id="nombre" placeholder="Introduce tu nombre">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">EMAIL</label>
+              <input type="email" class="form-control" id="email" placeholder="Introduce tu email">
+            </div>
+            <div class="mb-3">
+                <label class="descripcion" for="descripcion">DESCRIPCION</label>  
+                <textarea name="descripcion" id="descripcion" placeholder="¡DEJA TU OPINION!"></textarea>
+            </div>
+            <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+            <input type="submit" id="btn-form" value="ENVIAR">
+        </form>
+    </div><!-- FIN DE VALORACIONES Y FORMULARIO -->
+
+    <!-- PIE DE PAGINA -->
+    <footer>
+        <h4 id="titulo-footer">
+            TABLETOPGAMES
+            <span id="copy">&#169;</span>
+        </h4>
+        
+    </footer>
+    
+</body>
+</html>

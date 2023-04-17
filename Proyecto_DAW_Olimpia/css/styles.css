@@ -1,0 +1,215 @@
+/*FUENTES DE GOOGLE FONTS*/
+
+/*TITULO HEADER*/
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/*MENU HORIZONTAL*/
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+/*FORMULARIO*/
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans&display=swap');
+
+/*FOOTER*/
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+
+
+body{
+    background-image: url(../img/fondo.jpg);
+    display: grid;
+    grid-template-columns: 1920px;
+    grid-template-rows: 200px 1100px 200px 1100px 210px;
+    grid-row-gap: 50px;
+}
+
+/*CONTENEDOR DE JUEGOS*/
+.menu{
+    width: 1640px;
+    height: 1250px;
+    margin-top:140px;
+    margin-right:150px;
+    margin-bottom:0px;
+    margin-left:140px;
+
+}
+
+/*HEADER CON LOGO Y TITULO*/
+.menu header{
+    width:100%;
+    height:200px;
+    display:flex;
+    flex-direction: row;
+    gap:50px;
+    /*border:5px solid black;*/
+}
+.menu header img{
+    width: 300px;
+    height: 160px;
+    margin-top:20px;
+    margin-left:60px;
+}
+.menu header #titulo{
+    width: 1268px;
+    height: 150px;
+    margin-top:50px;
+    font-size: 80px;
+    font-family:'Press Start 2P';
+}
+
+.menu header #titulo:nth-of-type(1){
+    position: relative;
+    background-image:linear-gradient(90deg,#000000,#FFFFFF);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
+}
+
+.menu header #titulo:nth-of-type(1):before{
+    position: absolute;
+    content:attr(data-text);
+    top:0;
+    left:0;
+    z-index: -1;
+    text-shadow: 3px -3px rgba(255,128,0,1),
+                 3px 3px 0 rgba(255,128,0,.5), 
+                 3px 3px 3px rgba(0,0,0,.25), 
+                 10px 10px 20px rgba(255,128,0,1), 
+                 20px 40px 40px rgb(0,0,0);  
+}
+
+/* CONTENEDOR DEL TABLERO DE JUEGOS */
+
+.menu .tablero{
+    width:100%;
+    height:1000px;
+    margin-top:50px;
+    display: grid;
+    grid-template-columns:repeat(3,280px);
+    grid-template-rows:repeat(2,280px);
+    grid-column-gap:264px;
+    grid-row-gap:250px;
+    /*border:5px solid black;*/
+    justify-content: center;
+}
+
+/*TARJETAS DE JUEGOS*/
+
+.menu .tablero .card{
+    width:100%;
+    height:100%;  
+}
+
+.menu .tablero #juego1,
+.menu .tablero #juego3{
+    margin-top:75px;
+}
+
+.menu .tablero #juego4,
+.menu .tablero #juego5{
+    margin-top:75px;
+    margin-left:300px;
+}
+
+/*MENU HORIZONTAL*/
+
+.nav{
+    width:100%;
+    height:200px;
+    margin-top:1200px;
+    display:grid;
+    grid-template-columns:repeat(6, 320px);
+    grid-template-rows: 200px;
+    background-image: url(../img/marcos2.png);
+}
+
+.nav .nav-item button{
+    width:320px;
+    height:200px;
+    font-size:37px;
+    font-family:'MedievalSharp';
+    background-color:transparent;
+    border:none;
+    /*border: 2px solid black;*/
+}
+
+/*FORMULARIO*/
+
+.formulario{
+    width:1640px;
+    height: 1100px;
+    margin-top:310px;
+    margin-left:150px;
+    /*border:5px solid black;*/
+    text-align:center;
+}
+
+.formulario #titulo-form{
+    font-size:64px;
+    font-family:'Press Start 2P';
+    color:#FFFFFF;
+    padding-top:50px;
+    text-shadow:5px -5px #FF8000,
+    4px -4px #FF8000,
+    3px -3px #FF8000,
+    2px -2px #FF8000;
+}
+
+.formulario form{
+    width:1194px;
+    height:744px;
+    border:10px solid  #0C8769;
+    background-color:#1DDAAD;
+    margin-top:100px;
+    margin-left:210px;
+    padding-left:94px;
+}
+
+.formulario form label{
+    font-size:40px;
+    font-family:'Spline Sans';
+    text-align:center;
+    color:#FFFFFF;
+    text-shadow:-3px 1px #000000;   
+}
+
+.formulario form input{
+    width:1000px;
+}
+
+.formulario form textarea{
+    width:1000px;
+    height:300px;
+    margin-top:10px;
+    margin-right:90px;
+}
+
+.formulario form #btn-form{
+    width:70px;
+    height:40px;
+    float:right;
+    margin-right:80px;
+}
+
+/*FOOTER*/
+
+footer{
+    width:100%;
+    height: 210px;
+    border:5px solid  #0C8769;
+    text-align: right;
+    margin-top:1150px;
+    background-color:#1DDAAD;
+}
+
+footer #titulo-footer{
+    padding-top:70px;
+    padding-right:60px;
+    font-family:'Italiana';
+    font-size:48px;
+    color: #FFFFFF;
+    text-shadow:3px 0px #000000;
+    
+}
+
+footer #titulo-footer #copy{
+    font-size:48px;
+    padding-bottom:60px;
+}

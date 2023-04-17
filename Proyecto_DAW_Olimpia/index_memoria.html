@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Memorex</title>
+    <!--Enlaces a hojas de estilos, la primera biblioteca de iconos.-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!--Enlaces a tipo de fuentes de Google.-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap" rel="stylesheet">
+    <!-- Incluye SweetAlert2 en tu página HTML -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <link rel="stylesheet" href="css/styles_memoria.css">
+</head>
+
+<div class="header-tiempo-container">
+    <div id="header">
+        <h1>Memorex</h1>
+    </div>
+    <div class="tiempo">
+        <div class="nuevo-juego" onclick="Tablero()">
+            NUEVO JUEGO
+        </div>
+        <div id="cronometro">TIEMPO: 00:00 </div>
+    </div>
+  </div>
+
+<body>
+    
+
+  
+      <br>
+      <div id="tablero">
+      </div>
+    
+   
+
+
+    
+
+    <script>
+        var cantidadTarjetas = 24
+        var iconos = []  //declaramos el array de iconos
+        var selecciones = [] //declaramos el array selecciones
+        var parejasEncontradas = 0  // agregamos una variable para contar las parejas encontradas
+        var tiempoInicial = 0;
+        var intervalId;
+
+        Tablero() //Llamamos a la función tablero
+
+        function cargarIconos() { //En esta función cargamos el array de iconos
+            iconos = [
+                '<i class="fas fa-yin-yang"></i>',
+                '<i class="fas fa-smile"></i>',
+                '<i class="far fa-smile-wink"></i>',
+                '<i class="fas fa-wrench"></i>',
+                '<i class="fas fa-truck-monster"></i>',
+                '<i class="fas fa-music"></i>',
+                '<i class="fas fa-glass-cheers"></i>',
+                '<i class="fas fa-skull-crossbones"></i>',
+                '<i class="fas fa-shoe-prints"></i>',
+                '<i class="fas fa-paw"></i>',
+                '<i class="fas fa-euro-sign"></i>',
+                '<i class="fas fa-exclamation-triangle"></i>',
+            ]
+        }
+
+        function Tablero() {
+            cargarIconos() //Llamada a la función que cargará los iconos
+            selecciones = []
+            var tablero = document.getElementById("tablero")
+            var tarjetas = [] //Array de tarjetas
+            //recorremos el array de tarjetas introduciendo el icono en cada una de las tarjetas
+            for (var i = 0; i < cantidadTarjetas; i++) {
+                tarjetas.push(`
+                <div class="area-tarjeta" onclick="seleccionarTarjeta(${i})">
+                    <div class="tarjeta" id="tarjeta${i}">
+                        <div class="cara trasera" id="trasera${i}">
+                            ${iconos[0]}
+                        </div>
+                        <div class="cara superior">
+                            <i class="far fa-question-circle"></i>
+                        </div>
+                    </div>
+                </div>        
+                `)
+                if (i % 2 == 1) { //Mediante este código conseguimos inctroducir los iconos por parejas
+                    iconos.splice(0, 1)
+                }
+            }
+
+            tarjetas.sort(() => Math.random() - 0.5) //Introducimos los iconos de forma aleatoria
+            tablero.innerHTML = tarjetas.join(" ")
+            tiempoInicial = Date.now();
+            intervalId = setInterval(actualizarCronometro, 1000);
+        }
+
+        function actualizarCronometro() {
+            var tiempoTranscurrido = Math.floor((Date.now() - tiempoInicial) / 1000); // calcular la diferencia de tiempo en segundos
+            var minutos = Math.floor(tiempoTranscurrido / 60);
+            var segundos = tiempoTranscurrido % 60;
+            var cronometro = document.getElementById("cronometro");
+            cronometro.textContent = `TIEMPO: ${minutos.toString().padStart(2, '0')}:${segundos.toString().padStart(2, '0')}`;
+        }
+        //Esta función es la utilizada cuando pinchamos cada una de las tarjetas
+
+        function seleccionarTarjeta(i) {
+
+
+            var tarjeta = document.getElementById("tarjeta" + i)  //seleccionamos la tarjeta mediante el id asociado a la posición del bucle
+
+
+            if (tarjeta.style.transform != "rotateY(180deg)") { //si no está cara arriba la rotamos
+                tarjeta.style.transform = "rotateY(180deg)"
+                selecciones.push(i) //introducimos la posicion de la carta seleccionada a la variable
+            }
+            if (selecciones.length == 2) {//si tenemos dos cartas seleccionadas que no han hecho mach se tienen que deseleccionar
+                deseleccionar(selecciones)//llamamos a la función y le pasamos el parámetro
+                selecciones = [] //Reiniciamos la variable
+
+            }
+
+        }
+        //Esta función es la encargada de voltear las cartas si se ha fallado o dejarlas en caso de acierto  
+        function deseleccionar(selecciones) {
+            setTimeout(() => { //Retrasamos el inicio de la funcion durante un segundo
+                var trasera1 = document.getElementById("trasera" + selecciones[0]) //obtenemos los iconos seleccionados
+                var trasera2 = document.getElementById("trasera" + selecciones[1])
+                if (trasera1.innerHTML != trasera2.innerHTML) { //los comparamos
+                    var tarjeta1 = document.getElementById("tarjeta" + selecciones[0])
+                    var tarjeta2 = document.getElementById("tarjeta" + selecciones[1])
+                    tarjeta1.style.transform = "rotateY(0deg)" //si no son iguales volvemos a taparlos
+                    tarjeta2.style.transform = "rotateY(0deg)"
+                } else {
+                    trasera1.style.background = "LightSeaGreen" // si coinciden les cambiamos el color y quedan destapadas
+                    trasera2.style.background = "LightSeaGreen"
+                    parejasEncontradas++  // si los iconos coinciden, aumentamos el contador de parejas encontradas
+                    if (parejasEncontradas == cantidadTarjetas / 2) {
+                        clearInterval(intervalId);
+                          Swal.fire({    // Mensaje con el tiempo empleado
+                            position: 'center',
+                            icon: 'success',
+                            title: "¡Has ganado!\n"  + cronometro.textContent + " segundos",
+                            showConfirmButton: false,
+                            timer: 3000
+                            
+                        }).then(() => {
+                        parejasEncontradas = 0; // Reiniciar contador de parejas encontradas
+                        });
+
+
+                    }
+                }
+
+            }, 1000);
+
+        }
+
+    </script>
+    
+   
+
+</body>
+
+</html>
